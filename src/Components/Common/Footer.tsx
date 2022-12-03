@@ -11,7 +11,7 @@ function Footer() {
       >
         <img src={linkedinLogo} alt="linkedin logo" className="footer-logo" />
       </a>
-      <a href="https://github.com/AlannV/ratherlabs-challenge" target="blank">
+      <a href="https://github.com/AlannV/RatherLabs" target="blank">
         <img src={githubLogo} alt="github logo" className="footer-logo" />
       </a>
     </footer>
