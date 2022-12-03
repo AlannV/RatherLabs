@@ -20,7 +20,7 @@ function SurveyModal() {
         <Button disabled={true}>Start Survey!</Button>
       ) : (
         <>
-          <Card style={{ width: 240 }} cover={<img src={surveySample.image} />}>
+          <Card style={{ width: 340 }} cover={<img src={surveySample.image} />}>
             <Button
               onClick={() => {
                 setIsModalVisible(true);
@@ -30,7 +30,7 @@ function SurveyModal() {
             </Button>
           </Card>
           <Modal
-            width={"18rem"}
+            width={460}
             title={surveySample.title}
             open={isModalVisible}
             footer={null}

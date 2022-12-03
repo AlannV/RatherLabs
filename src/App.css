@@ -36,3 +36,10 @@
   justify-content: center;
   flex-direction: column;
 }
+
+.game-over{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}

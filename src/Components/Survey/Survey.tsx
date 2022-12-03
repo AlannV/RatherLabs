@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
 import { Button, Card } from "antd";
 import { v4 } from "uuid";
 import { submitSurvey } from "../../Redux/Actions/index";
@@ -8,8 +7,6 @@ import { surveySample } from "./SurveySample";
 const quiz = surveySample.questions;
 
 function Survey() {
-  const dispatch = useDispatch();
-  const [cooldown, setCooldown] = useState(false);
   const [actualQuestion, setActualQuestion] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
   const [timeLeft, setTimeLeft] = useState(
@@ -45,13 +42,15 @@ function Survey() {
 
   if (isFinished)
     return (
-      <Card>
-        <div className="juego-terminado">
+      <Card style={{ width: 380 }}>
+        <div className="game-over">
           <span>
-            <p>These are your answers for the survey:</p>
+            <h3>These were your answers:</h3>
             {quiz.map((question, index) => (
               <div key={index}>
-                <p>{question.text} : </p>
+                <p>
+                  <b>{question.text}</b> :{" "}
+                </p>
                 <p>{userAnswers[index]}</p>
               </div>
             ))}
@@ -61,7 +60,7 @@ function Survey() {
               handleSubmitSurvey(userAnswers);
             }}
           >
-            Finish Quiz!
+            Submit Answers!
           </Button>
         </div>
       </Card>
@@ -70,7 +69,7 @@ function Survey() {
   return (
     <Card
       hoverable
-      style={{ width: 240 }}
+      style={{ width: 380 }}
       cover={
         <img
           src={quiz[actualQuestion].image}
@@ -79,7 +78,7 @@ function Survey() {
         />
       }
     >
-      <div className="lado-izquierdo">
+      <div className="question-card">
         <p> Question {actualQuestion + 1} from</p> {quiz.length}
         <p>{quiz[actualQuestion].text}</p>
         <div>
