@@ -43,3 +43,18 @@
   justify-content: center;
   flex-direction: column;
 }
+
+.question-card{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.option-btn{
+  margin: 1rem;
+}
+
+.ant-btn{
+  margin: 0.5rem;
+}

@@ -79,9 +79,15 @@ function Survey() {
       }
     >
       <div className="question-card">
-        <p> Question {actualQuestion + 1} from</p> {quiz.length}
-        <p>{quiz[actualQuestion].text}</p>
-        <div>
+        <p>
+          <b>
+            Question {actualQuestion + 1} of {quiz.length}
+          </b>
+        </p>
+        <p>
+          <b>{quiz[actualQuestion].text}</b>
+        </p>
+        <div className="option-btn">
           {!areDisabled ? (
             <span className="tiempo-restante">Time Left: {timeLeft} </span>
           ) : (
@@ -98,7 +104,7 @@ function Survey() {
           )}
         </div>
       </div>
-      <div className="option-buttons">
+      <div className="option-btn-holder">
         {quiz[actualQuestion].options.map((res) => (
           <Button
             disabled={areDisabled}
